@@ -7,3 +7,12 @@ CREATE TABLE posts (
     title TEXT NOT NULL,
     content TEXT NOT NULL
 );
+
+CREATE TABLE retorno (
+    bairro INTEGER
+);
+
+
+
+
+

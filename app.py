@@ -32,9 +32,10 @@ def index():
 @app.route('/db')
 def db_process():
     conn = get_db_connection()
-    sl_db = conn.execute('SELECT count(*) FROM posts WHERE content = "Centro" ').fetchall()
+    sl_db = conn.execute('SELECT * FROM posts WHERE content="Centro"').fetchall()
     conn.close()
-    return render_template('db_process.html', posts=sl_db)
+    return render_template('db_process.html', posts=(sl_db))
+
 
 @app.route('/testePI')
 def teste():
@@ -43,6 +44,10 @@ def teste():
 @app.route('/sobre')
 def sobreNos():
     return render_template('sobre.html')
+
+@app.route('/aprofundando')
+def aprofundando():
+    return render_template('aprofundando.html')
 
 @app.route('/<int:post_id>')
 def post(post_id):

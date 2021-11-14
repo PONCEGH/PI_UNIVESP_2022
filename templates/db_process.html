@@ -1,12 +1,16 @@
 
 	<style type="text/css">
-	table {font-family: arial, arial; border-collapse: collapse; width: 100%; border-radius: 5px; background-color: #f2f2f2;}
+table {font-family: arial, arial; border-collapse: collapse; width: 100%;
+    border-radius: 5px; background-color: #f2f2f2;}
 	</style>
 
 {% extends 'base.html' %}
 
 {% block content %}
        <h2>{% block title %} Projeto Integrador UNIVESP 2º Semestre 2021  {% endblock %}</h2>
+
+    <e4>Resumo das infestações de carrapatos por bairros
+    </e4>
 
    <table>
   <tr>
@@ -20,17 +24,16 @@
     <td><d6>{{ post['title'] }}</d6>
         </td>
 
-    <td><a href="{{ url_for('post', post_id=post['id']) }}">
-            <d6>{{ post['content'] }}</d6>
+        <td>
+        <d6>{{ post['content'] }}</d6>
         </td>
 
-    <td><a href="{{ url_for('edit', id=post['id']) }}">
-            <span class="badge badge-warning">Editar</span>
-        </a></td>
+   <td>
+        <d6>{{ post[''] }}</d6>
+        </td>
 
   </tr>
 {% endfor %}
-</table>
 
 
 {% endblock %}
